@@ -8,6 +8,6 @@ spring:
     virtual-host: /hmall # 虚拟主机
     username: hmall # 用户名
     password: 123 # 密码
-    listener:
+    listener:  # 能者多劳
       simple:
         prefetch: 1 # 每次只能获取一条消息，处理完成才能获取下一个消息
