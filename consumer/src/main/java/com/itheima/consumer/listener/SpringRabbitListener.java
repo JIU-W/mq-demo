@@ -45,7 +45,7 @@ public class SpringRabbitListener {
     }
 
     //@RabbitListener(queues = "direct.queue1")
-    @RabbitListener(bindings = @QueueBinding(
+    @RabbitListener(bindings = @QueueBinding(       //基于注解声明队列交换机
             value = @Queue(name = "direct.queue1"),
             exchange = @Exchange(name = "hmall.direct", type = ExchangeTypes.DIRECT),
             key = {"red", "blue"}
@@ -53,7 +53,7 @@ public class SpringRabbitListener {
     public void listenDirectQueue1(String msg) {
         System.out.println("消费者1接收到direct.queue1的消息：【" + msg + "】");
     }
-    
+
     //@RabbitListener(queues = "direct.queue2")
     @RabbitListener(bindings = @QueueBinding(
             value = @Queue(name = "direct.queue2"),
@@ -65,7 +65,7 @@ public class SpringRabbitListener {
     }
 
     //@RabbitListener(queues = "topic.queue1")
-    @RabbitListener(bindings = @QueueBinding(
+    @RabbitListener(bindings = @QueueBinding(           //基于注解声明队列交换机
             value = @Queue(name = "topic.queue1"),
             exchange = @Exchange(name = "hmall.topic", type = ExchangeTypes.TOPIC),
             key = "china.#"

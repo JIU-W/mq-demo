@@ -39,7 +39,7 @@ public class FanoutConfig {
      * 第2个队列
      */
     @Bean
-    public Queue fanoutQueue2(){
+    public Queue fanoutQueue2() {
         return new Queue("fanout.queue2");
     }
 
